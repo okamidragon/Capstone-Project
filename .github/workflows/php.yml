@@ -1,4 +1,4 @@
-name: PHP Tests
+name: PHP CI
 
 on:
   push:
@@ -6,31 +6,41 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+
 jobs:
-  test:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      # Checkout the repository
+      - uses: actions/checkout@v4
 
-      - name: Set up PHP
+      # Set up PHP
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
-          extensions: mbstring, mysqli, dom
-          coverage: none
+          php-version: '8.2' # Adjust if needed
 
-      - name: Validate PHP syntax
-        run: |
-          echo "Checking for syntax errors in PHP files..."
-          find . -type f -name "*.php" -exec php -l {} \;
+      # Validate composer.json and composer.lock
+      - name: Validate composer.json
+        run: cd GroupProject/GroupProject && composer validate --strict
 
+      # Cache Composer dependencies
+      - name: Cache Composer packages
+        uses: actions/cache@v3
+        with:
+          path: GroupProject/GroupProject/vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('GroupProject/GroupProject/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      # Install dependencies
+      - name: Install Composer dependencies
+        run: cd GroupProject/GroupProject && composer install --prefer-dist --no-progress
+
+      # Run PHPUnit tests
       - name: Run PHPUnit tests
-        run: |
-          if [ -f "tests/test_example.php" ]; then
-            vendor/bin/phpunit --testdox || php tests/test_example.php
-          else
-            echo "No PHPUnit tests found, running simple custom tests..."
-            php tests/test_example.php || true
-          fi
+        run: cd GroupProject/GroupProject && vendor/bin/phpunit --colors=always
