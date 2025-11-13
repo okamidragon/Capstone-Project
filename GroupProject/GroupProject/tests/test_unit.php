@@ -1,6 +1,6 @@
 <?php
 // tests/test_unit.php
-require_once '../GroupProject/backend/db_connect.php';
+require_once '../backend/db_connect.php';
 
 $tests = [];
 
