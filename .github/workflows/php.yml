@@ -34,3 +34,8 @@ jobs:
             echo "No PHPUnit tests found, running simple custom tests..."
             php tests/test_example.php || true
           fi
+
+      - name: Run PHP tests
+        run: |
+          php GroupProject/GroupProject/tests/test_unit.php
+          php GroupProject/GroupProject/tests/test_integration.php
