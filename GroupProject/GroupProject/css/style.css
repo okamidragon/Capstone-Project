@@ -1,4 +1,4 @@
-﻿* {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
     color: #1a1a1a;
 }
 
-/* === Navbar Styling === */
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -231,4 +231,93 @@ footer {
 .error {
     color: #c0392b;
     margin-bottom: 10px;
+}
+
+/* My Activities Page */
+.activities-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.activities-container {
+    width: 80%;
+    max-width: 900px;
+}
+
+    .activities-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #002d2d;
+    }
+
+.activities-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+    .activities-table th,
+    .activities-table td {
+        padding: 16px 20px;
+        border: 1px solid #ccc;
+    }
+
+    .activities-table th {
+        background-color: #0c7b75;
+        color: #fff;
+    }
+
+    .activities-table tr {
+        height: 50px;
+    }
+    .activities-table tr:nth-child(even) {
+        background-color: #f7fdfd;
+    }
+
+    .activities-table tr:hover {
+        background-color: #e8f5f3;
+    }
+
+    .activities-table td {
+        color: #1a1a1a;
+    }
+
+.no-activities {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Account Page */
+.account-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+    background-color: #f7fdfd;
+    padding: 20px;
+}
+
+.account-container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
+
+    .account-container h2 {
+        margin-bottom: 20px;
+        color: #002d2d;
+        text-align: center;
+    }
+
+.account-info-card p {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #333;
 }
