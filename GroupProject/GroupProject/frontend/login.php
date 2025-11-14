@@ -63,7 +63,7 @@ session_start();
           } else if (data.role === 'admin') {
             window.location.href = '../admin/manage_users.php';
           } else {
-            window.location.href = '../frontend/home/index.php';
+            window.location.href = '../frontend/index.php';
           }
 
         } else {
@@ -79,3 +79,4 @@ session_start();
 
 </body>
 </html>
+
