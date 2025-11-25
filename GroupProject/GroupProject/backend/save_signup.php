@@ -32,7 +32,7 @@ $stmt = $mysqli->prepare("INSERT INTO users (username, email, password) VALUES (
 $stmt->bind_param("sss", $username, $email, $hashed_password);
 
 if ($stmt->execute()) {
-    echo "Sign up successful! <a href='login.php'>Log in</a>";
+    echo "Sign up successful! <a href='../frontend/login.php'>Log in</a>";
 } else {
     echo "Error: " . $stmt->error;
 }
