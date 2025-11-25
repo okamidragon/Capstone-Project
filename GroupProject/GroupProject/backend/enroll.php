@@ -19,7 +19,7 @@ $stmt->bind_param("ii", $user_id, $activity_id);
 if ($stmt->execute()) {
     $stmt->close();
     $mysqli->close();
-    header("Location: activity.php?id=$activity_id&enrolled=1");
+    header("Location: ../frontend/activity.php?id=$activity_id&enrolled=1");
     exit;
 } else {
     echo "Error enrolling: " . $stmt->error;
