@@ -84,7 +84,7 @@ $mysqli->close();
                     <button type="submit" name="unenroll" class="btn">Unenroll</button>
                 </form>
             <?php else: ?>
-                <form action="enroll.php" method="POST">
+                <form action="../backend/enroll.php" method="POST">
                     <input type="hidden" name="activity_id" value="<?php echo $activity_id; ?>">
                     <button type="submit" class="btn">Enroll</button>
                 </form>
