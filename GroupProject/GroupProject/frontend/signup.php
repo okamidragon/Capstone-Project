@@ -17,7 +17,7 @@
 <section class="signup-section">
     <div class="signup-container">
         <h2>Create an Account</h2>
-        <form action="save_signup.php" method="POST">
+        <form action="../backend/save_signup.php" method="POST">
             <input type="text" name="username" placeholder="Username" required><br>
             <input type="email" name="email" placeholder="Email" required><br>
             <input type="password" name="password" placeholder="Password" required><br>
