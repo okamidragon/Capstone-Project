@@ -25,7 +25,7 @@ session_start();
         <input type="password" id="password" placeholder="Password" required>
         <button type="submit">Log In</button>
       </form>
-      <p>Don't have an account? <a href="../frontend/signup/signup.php">Sign Up</a></p>
+      <p>Don't have an account? <a href="../frontend/signup.php">Sign Up</a></p>
     </div>
   </section>
 
@@ -79,4 +79,3 @@ session_start();
 
 </body>
 </html>
-
